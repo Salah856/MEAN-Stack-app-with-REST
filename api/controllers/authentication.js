@@ -10,6 +10,7 @@ module.exports.register = (req, res) => {
 
   user.setPassword(req.body.password);
 
+
   user.save(() => {
     const token = user.generateJwt();
     res.status(200);
